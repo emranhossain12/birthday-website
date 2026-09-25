@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️ | Birthday</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pink:#ff6f91;--rose:#ff4f78;--soft:#fff4f7;--dark:#2b1720;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,sans-serif;background:#12070c;color:#fff;overflow-x:hidden;
+}
+#stars{position:fixed;inset:0;z-index:-2;background:
+ radial-gradient(circle at 20% 20%,#3b1425 0,transparent 30%),
+ radial-gradient(circle at 80% 70%,#29101c 0,transparent 35%),#12070c}
+#stars:before,#stars:after{content:"";position:absolute;inset:0;background-image:
+ radial-gradient(#fff 1px,transparent 1px);background-size:80px 80px;opacity:.22}
+#stars:after{background-size:130px 130px;opacity:.14;transform:translate(25px,30px)}
+.page{display:none;min-height:100vh;padding:35px 20px 100px;position:relative}
+.page.active{display:flex;flex-direction:column;align-items:center;animation:fade .7s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.nav{
+ position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;
+ display:flex;gap:7px;padding:7px;background:rgba(255,255,255,.08);
+ backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.12);
+ border-radius:50px;box-shadow:0 10px 35px #0005
+}
+.nav button{border:0;background:transparent;color:#fff;padding:9px 14px;border-radius:30px;
+font-family:inherit;cursor:pointer;font-size:12px}
+.nav button.active,.nav button:hover{background:var(--rose)}
+
+.hero{max-width:850px;text-align:center;margin:auto;padding-top:55px}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;color:#ffabc0;font-size:11px;margin-bottom:20px}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(65px,13vw,145px);line-height:.75;
+font-weight:600;background:linear-gradient(120deg,#fff,#ffb3c5,#fff);-webkit-background-clip:text;color:transparent}
+.hero h2{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,5vw,55px);font-weight:500;margin-top:25px}
+.hero p{max-width:620px;margin:22px auto;color:#e8cbd3;line-height:1.8;font-size:14px}
+.heart{font-size:55px;display:block;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.16)}}
+.btn{
+border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,#ff4f78,#ff86a2);
+padding:13px 23px;border-radius:50px;font-family:inherit;font-weight:500;
+box-shadow:0 10px 30px #ff4f7840;transition:.25s
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px #ff4f7860}
+
+.section-title{text-align:center;margin:65px 0 30px}
+.section-title small{color:#ff9eb5;letter-spacing:3px;text-transform:uppercase;font-size:10px}
+.section-title h2{font-family:"Cormorant Garamond";font-size:46px;font-weight:600;margin-top:7px}
+
+.collage-wrap{width:min(900px,100%);background:#fff;padding:12px;border-radius:20px;box-shadow:0 25px 70px #0007}
+.collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:7px}
+.slot{position:relative;overflow:hidden;background:#f6dce4;cursor:pointer}
+.slot:nth-child(1){grid-column:span 2;grid-row:span 2}
+.slot:nth-child(4){grid-column:span 2}
+.slot img{width:100%;height:100%;object-fit:cover;display:block}
+.slot .empty{height:100%;display:flex;align-items:center;justify-content:center;color:#8b5a68;
+font-size:12px;text-align:center;padding:10px}
+input[type=file]{display:none}
+.upload-box{text-align:center;margin:18px auto;max-width:650px}
+.hint{color:#cdaeb8;font-size:11px;margin-top:9px;line-height:1.6}
+
+.letter{
+width:min(760px,100%);background:#fffaf6;color:#3b2429;padding:clamp(28px,7vw,65px);
+border-radius:4px;box-shadow:0 30px 80px #0008;position:relative;
+background-image:linear-gradient(#0000 31px,#f0dfe0 32px);
+background-size:100% 32px;
+}
+.letter:before{content:"";position:absolute;inset:12px;border:1px solid #d9b4bb;pointer-events:none}
+.letter .to{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:600;margin-bottom:22px;color:#9e405b}
+.letter p{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.85;margin-bottom:18px;position:relative}
+.signature{text-align:right;font-family:Georgia,"Times New Roman",serif;font-size:22px;font-weight:600;color:#9e405b;margin-top:30px}
+
+.timebox strong{font-size:25px;display:block}.timebox span{font-size:9px;color:#c9aeb7;letter-spacing:1px}
+
+.final-card{max-width:720px;text-align:center;margin:auto}
+.final-card h2{font-family:"Cormorant Garamond";font-size:clamp(50px,9vw,85px);line-height:.9}
+.final-card p{color:#dfc3cb;margin:25px auto;line-height:1.8;max-width:580px;font-size:14px}
+.quote{font-family:"Cormorant Garamond";font-size:27px;color:#ffb4c6;margin:30px 0}
+
+.music{
+position:fixed;right:18px;bottom:18px;z-index:30;width:45px;height:45px;border-radius:50%;
+border:1px solid #ffffff22;background:#ffffff12;color:#fff;backdrop-filter:blur(10px);cursor:pointer
+}
+.footer{position:absolute;bottom:25px;color:#9e7f88;font-size:10px;letter-spacing:1px}
+
+@media(max-width:600px){
+ .page{padding:25px 14px 80px}
+ .nav{top:10px;max-width:94%;overflow:auto;white-space:nowrap}
+ .nav button{padding:8px 10px;font-size:10px}
+ .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:145px}
+ .slot:nth-child(1){grid-column:span 2}
+ .slot:nth-child(4){grid-column:span 1}
+ .letter p{font-size:17px;line-height:1.8}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<nav class="nav">
+  <button class="active" onclick="showPage(1,this)">Home</button>
+  <button onclick="showPage(2,this)">My Love</button>
+  <button onclick="showPage(3,this)">Letter</button>
+</nav>
+
+<main>
+<section class="page active" id="page1">
+  <div class="hero">
+    <div class="eyebrow">A little website made only for you</div>
+    <span class="heart">❤️</span>
+    <h1>Happy Birthday</h1>
+    <h2>My Favorite Person</h2>
+    <p>
+      On your special day, I just want you to know how deeply you are cherished</b>.
+    </p>
+    <button class="btn" onclick="showPage(2,document.querySelectorAll('.nav button')[1])">A Little Surprise For You ✨</button>
+    </div>
+  </div>
+  <div class="footer">MADE WITH LOVE • JUST FOR YOU</div>
+</section>
+
+<section class="page" id="page2">
+  <div class="section-title">
+    <small>chapter two</small>
+    <h2>Just For You, My Love 📸</h2>
+  </div>
+       <img src="images/pic1.jpg" alt="Beautiful photo">
+    </div>
+</div>
+  </div>
+  <button class="btn" onclick="showPage(3,document.querySelectorAll('.nav button')[2])">A Letter From My Heart 💌</button>
+  <div class="footer">A FEW BEAUTIFUL MOMENTS OF YOU</div>
+</section>
+
+<section class="page" id="page3">
+  <div class="section-title">
+    <small>from my heart</small>
+    <h2>A Letter For You 💌</h2>
+  </div>
+  <article class="letter">
+    <div class="to">To the girl who makes my world softer,</div>
+    <p>Happy Birthday, love.</p>
+    <p>
+      I still cant believe how a simple conversation on 29 June, 2026 could become something so beautiful.
+    </p>
+    <p>
+      Ill never forget the 2026 FIFA World Cup, because somehow, it brought you into my life. We never planned to fall in love. We both wanted to avoid a relationship and just enjoy those little butterfly moments between us.
+    </p>
+    <p>
+      But somehow, without even meeting you, I got so attached to you. And before we even realized it, we fell in love.
+    </p>
+    <p>
+      I don’t know how you became this important to me, but I know one thing, I have grown so weak for you and love you more than words can explain.
+    </p>
+    <p>
+      On your special day, I just wish you endless happiness, beautiful moments, and everything your heart deserves.
+    </p>
+    <p>Thank you for becoming one of the most beautiful parts of my life. ❤️</p>
+    <div class="signature">Forever yours,<br>Someone who loves you 🤍</div>
+  </article>
+
+  <div style="margin-top:35px">
+    <button class="btn" onclick="showPage(1,document.querySelectorAll('.nav button')[0])">Back to the beginning ↺</button>
+  </div>
+  <div class="footer">ENDLESSLY • WITH LOVE</div>
+</section>
+</main>
+
+<button class="music" id="musicBtn" title="Music">♫</button>
+<audio id="bgMusic" loop>
+  <!-- Optional: put your own music file name here, e.g. music.mp3 -->
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showPage(n,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+const music=document.getElementById('bgMusic');
+const musicBtn=document.getElementById('musicBtn');
+musicBtn.onclick=async()=>{
+  if(music.paused){
+    try{await music.play(); musicBtn.textContent='❚❚';}
+    catch(e){alert('Add a file named music.mp3 beside this HTML file, then tap again.');}
+  }else{music.pause();musicBtn.textContent='♫';}
+};
+</script>
+</body>
+</html>
